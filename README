@@ -1,0 +1,36 @@
+BLOG in tornado
+====================================
+A simple blog built using Python tornado framework and MYSQL datatabase.
+
+
+1. Install Python prerequisites
+    pip install -r requirements.txt
+
+2. Connect to MySQL and create a database and user for the blog.
+
+   Connect to MySQL as a user that can create databases and users:
+   mysql -u root
+
+   Create a database named "blog":
+   mysql> CREATE DATABASE blog;
+
+   Allow the "blog" user to connect with the password "blog":
+   mysql> GRANT ALL PRIVILEGES ON blog.* TO 'blog'@'localhost' IDENTIFIED BY 'blog';
+
+3. Create the tables in your new database.
+
+   You can use the provided schema.sql file by running this command:
+   mysql --user=blog --password=blog --database=blog < schema.sql
+
+   You can run the above command again later if you want to delete the
+   contents of the blog and start over after testing.
+
+4. Run the blog
+    make the script executable by running chmod u+x blog.py
+   ./blog.py
+
+
+5. Visit your new blog
+
+   Open http://localhost:8888/ in your web browser.
+
